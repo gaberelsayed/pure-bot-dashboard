@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<%- include('../head'); -%>
+</head>
+<body id="result" style="background-color: #333a40;">
+ <%- include('../nav'); -%>
+ <br><br>
+<div class="row">
+		
+     <div class="col">
+            <div class="container">         
+<div class="card-columns" style="padding: 20px; border-radius: 40px;">
+
+        <div class="card" style="background:#e9ecef; border-bottom:none;">
+					<h3 class="card-header" style="background:#363c42; color:#e9ecef; border-bottom:none;"><center><a href="/mange/<%=server.id%>/auto-responder" style="font-size: 25px; text-decoration: none; color:#fff;">Auto Responder</a></center></h3>
+					<div  class="card-block" href="/mange/<%=server.id%>/auto_responder">
+						<p class="card-text" href="/mange/<%=server.id%>/auto_responder" style="color:#fff"><center>A system where you can add as many Responder<br><br> as you want to your server.</center></p>
+					</div>
+				</div>
+         <div class="card" style="background:#e9ecef; border-bottom:none;">
+					<h3 class="card-header" style="background:#363c42; color:#e9ecef; border-bottom:none;"><center><a href="/mange/<%=server.id%>/auto-responder" style="font-size: 25px; text-decoration: none; color:#fff;">Auto Responder</a></center></h3>
+				<div  class="card-block" href="/mange/<%=server.id%>/picture">
+						<p class="card-text" href="/mange/<%=server.id%>/picture" style="color:#fff"><center>A system where Picture Channel<br><br> as you want to your server.</center></p>
+					</div>
+				</div>
+        <div class="card" style="background:#e9ecef; border-bottom:none;">
+					<h3 class="card-header" style="background:#363c42; color:#e9ecef; border-bottom:none;"><center><a href="/mange/<%=server.id%>/auto-responder" style="font-size: 25px; text-decoration: none; color:#fff;">Auto Responder</a></center></h3>
+				<div  class="card-block" href="/mange/<%=server.id%>/welcomre">
+						<p class="card-text" href="/welcome/<%=server.id%>/welcomer" style="color:#fff"><center>Selcect Welcome Channel.<br><br>AND Select Welcome And Leaveng Message.</center></p>
+					</div>
+				</div>
+
+</div>
+      </form>
+    </div>  
+  </div>
+</div> 
+
+<%- include('../footer'); -%>
+ <%- include('../script'); -%>
+</body>
+</html>

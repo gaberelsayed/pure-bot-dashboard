@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<%- include('../head'); -%>
+</head>
+  <body id="result" style="background-color: #333a40;">
+<%- include('../nav'); -%>
+
+<div class="mx-auto" style="width: 90%; margin-top: 5vh">
+    <center>
+        <h1 style="color:white">
+            <%=bot.user.username%> Subscriptions
+        </h1>
+        <div class="card-group mt-1 align-items-center">
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img src="http://pluspng.com/img-png/free-png-plus-sign-plus-icon-512.png" class="card-img-top" alt="TICKETS Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Plus</h5>
+                            <p class="card-text">Get more features like the volume and more..<br>Price: Donate any amount more than 2$</p>
+                            <a onclick="alert(`Soon..`)" class="btn btn-info purchase">
+                                <div style="color: white;">Donate</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="https://hotemoji.com/images/dl/d/heavy-plus-sign-emoji-by-google.png" class="card-img-top" alt="SYSTEM Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">Custom Bot</h5>
+                            <p class="card-text">Change the bot username/avatar/status/activity easily!<br>Price: Soon</p>
+                            <a onclick="alert(`Soon..`)" class="btn btn-info purchase">
+                                <div style="color: white;">Purchase</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+</div>
+<%- include('../footer'); -%>
+ <%- include('../script'); -%>
+</body>
+
+</html>

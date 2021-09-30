@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<%- include('../head'); -%>
+</head>
+
+  <body id="result" style="background-color: #333a40;">
+ <%- include('../nav'); -%>
+<div class="container">
+    <center>
+        <div>
+            <br><br><br>
+            <div class="jumbotron">
+
+                <img style="border-radius: 45%;" src="<%=bot.user.displayAvatarURL%>" width="128" height="128">
+                <h1><strong><%=bot.user.username%></strong></h1>
+                <br>
+                <h2>
+                    افضل بوت عربي لعام 2020 لحماية سيرفرك وادارته وبمميزات حصرية!
+                </h2>
+                <h3>
+                    يخدم اكثر من <b><%=guildCount %> سيرفر</b>, و <b><%=usersCount %> عضو.</b>
+                </h3>
+                <br>
+               <a href="/invite" class="btn btn-primary" target="_blank">
+                    اضافة البوت
+                </a>
+      <% if (user) { %>
+               <a href="/dashboard" class="btn btn-success">
+                    لوحة التحكم
+                </a>  
+              <a href="/logout" class="btn btn-secondary">
+                    تسجيل الخروج
+                </a> 
+                      <% } else { %>
+                <a href="/login" class="btn btn-secondary">
+                    تسجيل الدخول
+                </a> 
+              <% } %>
+            </div>
+    </center>
+</div>
+</div>
+                <hr>
+                <div class="row text-center" style="color:white">
+                    <div class="col-md-4">
+                        <h5 style="font-size: 20px;"><strong><i style="color:red;" class="fas fa-heart"></i></strong> متواجد بـ :</h5>
+                        <h6 style="font-size: 15px"><strong><span class="counter" data-count="<%= guildCount %>"><%= guildCount %></span></strong> سيرفر</h6>
+                        </div>
+                        <div class="col-md-4">
+                        <h5 style="font-size: 20px;"><strong><i class="fas fa-users"></i></strong> يَخدم أكثر من :</h5>
+                        <h6 style="font-size: 15px"><strong><span class="counter" data-count=""><%= usersCount %></span></strong> مستخدم</h6>
+                        </div>
+                        <div class="col-md-4">
+                        <h5 style="font-size: 20px;"><strong><i class="fas fa-code"></i></strong> نَفذت :</h5>
+                        <h6 style="font-size: 15px"><strong><span class="counter" data-count="100">100</span></strong> أمر</h6>
+                        </div> 
+                </div>
+
+<%- include('../footer'); -%>
+<%- include('../script'); -%>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<%- include('../head'); -%>
+</head>
+
+  <body id="result" style="background-color: #333a40;">
+<%- include('../nav'); -%>
+
+                <div class="container">
+                  <div class="text-center">
+                    <br><br>
+                    <h1 class="display-3 bold animated bounceInDown" style="color:white; text-shadow: 0 0 20px rgba(0, 0, 0, 0.521);">أعلى المتصدرين</h1>
+                    <p class="lead bold animated bounceInUp" style="color:white; text-shadow: 0 0 20px rgba(0, 0, 0, 0.521);">أعلى 30 سيرفر متصدر في بيور</p>
+                    <br><br>
+
+                  </div>
+                </div>
+<div class="container">
+      <center>
+              <p style="color:white;" >
+                  <strong>ملاحظة:</strong> اليكس يعرض فقط السيرفرات التي يوجد بها ويعرض أعلى السيرفرات من ناحية النقاط
+                </p>
+  </center>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                    <% const top = bot.guilds.sort((a, b) => a.memberCount - b.memberCount).array().reverse() %>
+                      <div class="row">
+                     <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[0].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[0].name %></h2>
+                          <p><%= top[0].memberCount %> عضو</p>
+                          <p><%= top[0].memberCount + top[0].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الأول</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[1].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[1].name %></h2>
+                          <p><%= top[1].memberCount %> عضو</p>
+                          <p><%= top[1].memberCount + top[1].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الثاني</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[2].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[2].name %></h2>
+                          <p><%= top[2].memberCount %> عضو</p>
+                          <p><%= top[2].memberCount + top[2].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الثالث</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[3].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[3].name %></h2>
+                          <p><%= top[3].memberCount %> عضو</p>
+                          <p><%= top[3].memberCount + top[3].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الرابع</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[4].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[4].name %></h2>
+                          <p><%= top[4].memberCount %> عضو</p>
+                          <p><%= top[4].memberCount + top[4].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الخامس</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[5].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[5].name %></h2>
+                          <p><%= top[5].memberCount %> عضو</p>
+                          <p><%= top[5].memberCount + top[5].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>السادس</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[6].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[6].name %></h2>
+                          <p><%= top[6].memberCount %> عضو</p>
+                          <p><%= top[6].memberCount + top[6].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>السابع</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[7].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[7].name %></h2>
+                          <p><%= top[7].memberCount %> عضو</p>
+                          <p><%= top[7].memberCount + top[7].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>الثامن</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[8].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[8].name %></h2>
+                          <p><%= top[8].memberCount %> عضو</p>
+                          <p><%= top[8].memberCount + top[8].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>التاسع</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+                <div class="custom-jumbotron">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-sm-2">
+                          <div class="col-sm-5 text-center">
+                          <img style="border-radius: 200px;" width="120" height="120" src="<%= top[9].iconURL %>">
+                        </div>
+                          </div>
+                          <div class="col-sm-10">
+                          <h2 style="font-family: 'Montserrat'"><%= top[9].name %></h2>
+                          <p><%= top[9].memberCount %> عضو</p>
+                          <p><%= top[9].memberCount + top[9].memberCount * 5 %> نقطة</p>
+                          <p>الترتيب: <strong>العاشر</strong></p>
+                          </div>
+                          </div>
+                  </div>
+                </div>
+                <br>
+    </div>
+                <br>
+                <br>
+<%- include('../footer'); -%>
+ <%- include('../script'); -%>
+</body>
+
+</html>

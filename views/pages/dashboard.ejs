@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<%- include('../head'); -%>
+</head>
+  <body id="result" style="background-color: #333a40;">
+      <% for(let i = 0; i < bot.length; i++) { %>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark" dir="rtl">
+  <a class="navbar-brand" href="/">
+    <img src="https://cdn.discordapp.com/avatars/643837077611610112/69273f81cdadfcc8bf5c9699f6852bef.png" alt="Pure Bot" id="logo" height="42" width="42">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/support"><i class="fab fa-discord"></i> الدعم الفني </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/commands"><i class="fas fa-plus-circle"></i> الأوامر</a>
+      </li>
+      <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="userNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h" aria-hidden="true"></i>
+					المزيد
+				</a>
+				<div class="dropdown-menu" aria-labelledby="userNavbarDropdown">
+          <a class="dropdown-item" href="/subscriptions"><i class="fas fa-shopping-cart" aria-hidden="true"></i> الأشتراكات</a>
+          <a class="dropdown-item" href="/invite" onclick="window.open('/invite', 'newwindow', 'width=500,height=800'); return false;"><i class="fas fa-info-circle" aria-hidden="true"></i> اضافة البوت</a> 
+       </div>
+      </li>
+    </ul>
+  </div>
+     <% if (user) { %>
+      <% let format = ".png" || ".gif"; %>
+    <button class="btn btn-sm btn-primary" data-target="#loggedUserModal" id="modal" data-toggle="modal"><img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %><% format %>?size=2048" width="20" height="20" style="border-radius: 50px !important;"> مرحبا بك يا <%= user.username %></button>
+    <div class="modal fade bd-example-modal-lg" id="loggedUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-body text-center">
+    <div class="container">
+     <h4>
+     مرحبا بك يا <%= user.username %>
+    <img src="https://cdn.discordapp.com/avatars/<%= user.id %>/<%= user.avatar %><% format %>?size=2048" width="50" height="50" style="border-radius: 50px !important;">
+      </h4>
+           <hr>
+  <a style="font-family: 'JF Flat Regular';font-weight: bold" href="/dashboard"><button class="btn btn-primary btn-raised btn-block blue-gradient-2"><i class="fas fa-cogs"></i> الذهاب الى لوحة التحكم</button></a><br>
+     <a style="font-family: 'JF Flat Regular';font-weight: bold" href="#/users/<%= user.id %>/profile"><button class="btn btn-primary btn-raised btn-block blue-gradient-2"><i class="fas fa-id-badge"></i> رؤية ملفك الشخصي</button></a>
+   <hr>
+<a href="/logout"><button class="btn btn-danger btn-raised"><i class="fas fa-sign-in-alt"></i> تسجيل الخروج</button></a>
+<a href="#/users/<%= user.id %>/edit"><button class="btn btn-success btn-raised"><i class="fas fa-user"></i> إعدادات حسابك</button></a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+      <% } else { %>
+      <div>
+      <a href="/login"><button class="btn btn-sm btn-primary" type="submit"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button></a>
+      </div>
+      <% } %>
+</nav>
+              <h2 style="color:white;" class="text-center">
+          سيرفراتك:
+        </h2>
+        <p class="text-center" style="color:white; font-size: 13px;">
+              يمكنك فقط التحكم في السيرفرات اذا كنت صاحب السيرفر او تمتلك صلاحية التحكم في السيرفر
+          </p>
+    <hr> 
+    <center>
+    <div class="container2 text-center" style="margin-top: 4vh; margin-bottom: 4vh;">
+        <div class="row2">
+                      <% bot[i].user.guilds.forEach(guild => { 
+                        
+const guildperms = new bot[i].perms(guild.permissions);
+if(!guildperms.has("MANAGE_GUILD")) return;
+    %>
+                                                               <% 
+    let href, title;
+    if(bot[i].botty.guilds.get(guild.id)) {
+      href = `/guilds/${guild.id}/manage`;
+    } else {
+      href = `https://discordapp.com/oauth2/authorize?client_id=593000879876079616&scope=bot&guild_id=${guild.id}&response_type=code&redirect_uri=${encodeURIComponent("https://test-dashbot.glitch.me/auth")}`;
+    }
+    let src;
+    if(guild.icon){
+      src=`https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}?size=2048`
+    } else {
+      src= `https://www.dolmendis.com/img/image_not_found.jpg`
+    }
+    %>
+           <div class="server mx-auto">
+                <a href="<%= href %>" title="<%= guild.name %>">
+                    <img src="<%= src %>" style="border-radius:100%; width:100px; margin:40px;">
+                </a>
+            </div>
+  <%})%>
+       </div>
+    </div> 
+      </center>
+      <% } %>
+<%- include('../footer'); -%>
+ <%- include('../script'); -%>
+</body>
+
+</html>
